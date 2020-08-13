@@ -1,19 +1,22 @@
 var express = require('express');
+var EMP = require.main.require('./model/user');
 var router = express.Router();
 
 
 router.get('/emplist', function(req, res){
-
-	if(req.session.user != null){
-		Emp.get(user,function(result){
-		res.render('employee', {
+var user={};
+	if(req.session.username != null){
+		EMP.get(user,function(result){
+		res.render('employeelist', {
 		
-			upload: result 
+			employee: result 
             });
 		})
 	}else{
 			res.redirect('admin/admin');
 	}
 });
+
+
 
 module.exports = router;

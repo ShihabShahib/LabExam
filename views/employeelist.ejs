@@ -18,28 +18,21 @@
                     <td><label for="">Employee Designation</label></td>
                     <td><label for="">Action</label></td>
                 </tr>
+                <% if (employee){
+                    for(var i=0; i < employee.length; i++){ %>
+
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><%= employee[i].emp_id %></td>
+                    <td><%= employee[i].name %></td>
+                    <td><%= employee[i].phone %></td>
+                    <td><%= employee[i].gender %></td>
+                    <td><%= employee[i].designation %></td>
                     <td>
                         <a href="">Update</a> &nbsp;
                         <a href="">Delete</a>
                     </td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a href="">Update</a> &nbsp;
-                        <a href="">Delete</a>
-                    </td>
-                </tr>
+                <% }}%>
             </table>
         </fieldset>
     </form>

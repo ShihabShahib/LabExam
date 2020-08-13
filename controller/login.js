@@ -28,7 +28,7 @@ router.post('/', [
 
 	USER.login(user, function(result){
 		if(result!=""){
-			req.session.username = user.username;
+            req.session.username = user.username;
 			res.redirect('/admin/admin');
 		}else{
 			res.send('invalid username/password');
