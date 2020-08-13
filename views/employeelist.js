@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+</head>
+<body>
+    <form method="post">
+        <fieldset>
+            <legend>Employee List</legend>
+            <table border="1">
+                <tr>
+                    <td><label for="">Employee ID</label></td>
+                    <td><label for="">Employee Name</label></td>
+                    <td><label for="">Employee Phone no.</label></td>
+                    <td><label for="">Employee Gender</label></td>
+                    <td><label for="">Employee Designation</label></td>
+                    <td><label for="">Action</label></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="">Update</a> &nbsp;
+                        <a href="">Delete</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <a href="">Update</a> &nbsp;
+                        <a href="">Delete</a>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>
