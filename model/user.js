@@ -7,7 +7,7 @@ module.exports = {
 		db.getResults(sql, [user.username,user.password], function(result){
 
 			if(result.length > 0 ){
-				callback(result[0]);
+				callback(result);
 			}else{
 				callback([]);
 			}
@@ -18,7 +18,7 @@ module.exports = {
 		db.getResults(sql, user, function(result){
 
 			if(result.length > 0 ){
-				callback(result[0]);
+				callback(result);
 			}else{
 				callback([]);
 			}

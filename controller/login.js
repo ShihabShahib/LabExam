@@ -28,9 +28,14 @@ router.post('/', [
 
 	USER.login(user, function(result){
 		if(result!=""){
+      if(result[0].type=='1'){
             req.session.username = user.username;
 			res.redirect('/admin/admin');
-		}else{
+    }if(result[0].type=='2'){
+      req.session.username = user.username;
+			res.redirect('/admin/employee');
+    }
+  }else{
 			res.send('invalid username/password');
 		}
 	});

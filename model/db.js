@@ -5,7 +5,7 @@ var config = {
 	user: 'root',
 	password: '',
     database: 'node1',
-   
+	multipleStatements: true
 };
 
 
@@ -29,7 +29,7 @@ module.exports = {
 
 			if(params == ""){
 				connection.query(sql, function(err, result){
-
+					console.log('sssss');
 					if(err){
 						callback([]);
 					}else{
@@ -40,6 +40,7 @@ module.exports = {
 			}else{
 				connection.query(sql, params, function(err, result){
 					if(err){
+						
 						callback([]);
 					}else{
 						callback(result);

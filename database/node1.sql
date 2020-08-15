@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2020 at 10:16 AM
+-- Generation Time: Aug 15, 2020 at 08:00 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.31
 
@@ -40,7 +40,14 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`emp_id`, `name`, `phone`, `gender`, `designation`) VALUES
-(12, 'mrkhan', '12121212112', 'male', 'manager');
+(12, 'mrkhan', '12121212112', 'male', 'manager'),
+(19, 'nobita902', '12345678909', 'male', 'manager'),
+(20, '123456@gmail.com', '12345678901', 'male', 'manager'),
+(21, '123456@gmail.comm', '12345678901', 'male', 'manager'),
+(22, 'student902', '12345678901', 'male', 'manager'),
+(23, 'student90233', '12345678901', 'male', 'manager'),
+(24, 'student343', '12345678901', 'male', 'manager'),
+(25, '123456@gmail.com', '12345678901', 'male', 'manager');
 
 -- --------------------------------------------------------
 
@@ -51,15 +58,24 @@ INSERT INTO `employee` (`emp_id`, `name`, `phone`, `gender`, `designation`) VALU
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `type` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`) VALUES
-(6, 'admin@gmail.com', 'admin');
+INSERT INTO `user` (`id`, `username`, `password`, `type`) VALUES
+(6, 'admin@gmail.com', 'admin', 1),
+(12, 'nobita@gmail.com', 'nobita902', 2),
+(13, 'nobita902', 'qwertyuiop', 2),
+(14, '123456@gmail.com', '12345678', 2),
+(15, '123456@gmail.comm', '12345678', 2),
+(16, 'student902', '12345678', 2),
+(17, 'student90233', 'edffdds', 2),
+(18, 'student343', '12345678', 2),
+(19, '123456@gmail.com', 'Qwertyui-902', 2);
 
 --
 -- Indexes for dumped tables
@@ -85,13 +101,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
