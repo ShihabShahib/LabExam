@@ -44,5 +44,8 @@ router.post('/addemployee',[
             }
         });
 });
+router.get('/update',function(req,res){
+    res.render('update');
+});
 
 module.exports = router;
