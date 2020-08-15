@@ -23,5 +23,16 @@ module.exports = {
 				callback([]);
 			}
 		})
+	},
+	getemployee: function(user, callback){
+		var sql = "select * from employee WHERE name=?";
+		db.getResults(sql, user, function(result){
+
+			if(result.length > 0 ){
+				callback(result);
+			}else{
+				callback([]);
+			}
+		})
 	}
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 15, 2020 at 08:00 PM
+-- Generation Time: Aug 16, 2020 at 12:15 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.31
 
@@ -41,9 +41,8 @@ CREATE TABLE `employee` (
 
 INSERT INTO `employee` (`emp_id`, `name`, `phone`, `gender`, `designation`) VALUES
 (12, 'mrkhan', '12121212112', 'male', 'manager'),
-(19, 'nobita902', '12345678909', 'male', 'manager'),
-(20, '123456@gmail.com', '12345678901', 'male', 'manager'),
-(21, '123456@gmail.comm', '12345678901', 'male', 'manager'),
+(19, 'nobita@gmail.com', '12345678909', 'male', 'manager'),
+(21, 'vhhvn@gmail.com', '12457896312', 'female', 'tgytgvgh'),
 (22, 'student902', '12345678901', 'male', 'manager'),
 (23, 'student90233', '12345678901', 'male', 'manager'),
 (24, 'student343', '12345678901', 'male', 'manager'),
@@ -70,11 +69,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `type`) VALUES
 (6, 'admin@gmail.com', 'admin', 1),
 (12, 'nobita@gmail.com', 'nobita902', 2),
 (13, 'nobita902', 'qwertyuiop', 2),
-(14, '123456@gmail.com', '12345678', 2),
-(15, '123456@gmail.comm', '12345678', 2),
-(16, 'student902', '12345678', 2),
 (17, 'student90233', 'edffdds', 2),
-(18, 'student343', '12345678', 2),
 (19, '123456@gmail.com', 'Qwertyui-902', 2);
 
 --
