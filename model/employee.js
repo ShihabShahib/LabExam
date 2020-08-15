@@ -67,5 +67,28 @@ module.exports = {
 			}
 		});
 	},
+	delete: function(user, callback){
+		
+        
+        var sql2 = "DELETE FROM `user` WHERE `username`=?";;
+
+		db.execute(sql2, [user], function(status){
+			if(status){
+				callback(true);
+			}else{
+				callback(false);
+			}
+		});
+		var sql = "DELETE FROM `employee` WHERE 'name'=?";
+
+		db.execute(sql, [user], function(status){
+            
+			if(status){
+				callback(true);
+			}else{
+				callback(false);
+			}
+		});
+	},
     
 	}

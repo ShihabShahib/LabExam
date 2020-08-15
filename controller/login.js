@@ -33,7 +33,7 @@ router.post('/', [
 			res.redirect('/admin/admin');
     }if(result[0].type=='2'){
       req.session.username = user.username;
-			res.redirect('/admin/employee');
+			res.redirect('/employee/employee');
     }
   }else{
 			res.send('invalid username/password');

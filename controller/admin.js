@@ -9,9 +9,11 @@ router.get('/admin',function(req,res){
     res.render('admin');
 });
 
+
 router.get('/addemployee',function(req,res){
     res.render('addemployee');
 });
+
 
 router.post('/addemployee',[
 	// username can not be empty
@@ -85,6 +87,16 @@ router.post('/update/(:id)',[
                 res.send('not working');
             }
         });
+});
+router.get('/delete/(:id)',function(req,res){
+	
+	if(req.session.username != null){
+		employeelist.delete(req.params.id,function(status){
+		    res.render('admin');
+		})
+	}else{
+			res.redirect('admin/admin');
+	}
 });
 
 module.exports = router;
