@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>   
+</head>
+<body>
+    <% if (employee) { 
+        for(var i=0; i < employee.length; i++){ %>
+    <form method="post">
+    <fieldset>
+        
+				<table>
+
+					<tr>
+						<td>UserName</td>
+						<td><input type="text" name="username" value="<%= employee[i].name %>"></td>
+                    </tr>
+                    
+                    <tr>
+						<td>Phone</td>
+						<td><input type="text" name="employeephone" value="<%= employee[i].phone %>"></td>
+                    </tr>
+                    <tr>
+						<td>Gender</td>
+						<td><input type="text" name="employeegender" value="<%= employee[i].gender %>"></td>
+                    </tr>
+                    <tr>
+						<td>Designation</td>
+						<td><input type="text" name="employeedesignation" value="<%= employee[i].designation %>"></td>
+					</tr>
+					<tr>
+						<td><input type="submit" name="submit" value="Submit"></td>
+					</tr>
+				</table>
+    </fieldset>
+</form>
+<% }} %>
+</body>
+</html>

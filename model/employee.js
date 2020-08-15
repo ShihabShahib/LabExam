@@ -33,6 +33,39 @@ module.exports = {
 				callback(false);
 			}
 		});
-	}
+	},
+	getemp: function(user, callback){
+		var sql = "select * from employee WHERE name=?";
+		db.getResults(sql, user, function(result){
+
+			if(result.length > 0 ){
+				callback(result);
+			}else{
+				callback([]);
+			}
+		})
+	},
+	update: function(user, callback){
+		var sql = "UPDATE `employee` SET `name`=?,`phone`=?,`gender`=?,`designation`=? WHERE `name`=?";
+
+		db.execute(sql, [user.username,user.employeephone,user.employeegender,user.employeedesignation,user.name], function(status){
+            
+			if(status){
+				callback(true);
+			}else{
+				callback(false);
+			}
+		});
+        
+        var sql2 = "UPDATE `user` SET `username`=? WHERE `username`=?";;
+
+		db.execute(sql2, [user.username,user.name], function(status){
+			if(status){
+				callback(true);
+			}else{
+				callback(false);
+			}
+		});
+	},
     
 	}

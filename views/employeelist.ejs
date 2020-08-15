@@ -28,8 +28,8 @@
                     <td><%= employee[i].gender %></td>
                     <td><%= employee[i].designation %></td>
                     <td>
-                        <a href="">Update</a> &nbsp;
-                        <a href="">Delete</a>
+                        <a href="/admin/update/<%= employee[i].name %>">Update</a> &nbsp;
+                        <a href="/admin/delete/<%= employee[i].name %>" onclick=" return confirm('are you sure to delete')">Delete</a>
                     </td>
                 </tr>
                 <% }%>

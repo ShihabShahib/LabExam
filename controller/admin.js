@@ -44,8 +44,47 @@ router.post('/addemployee',[
             }
         });
 });
-router.get('/update',function(req,res){
-    res.render('update');
+router.get('/update/:id',function(req,res){
+    var updateid=req.params.id;
+	if(req.session.username != null){
+		employeelist.getemp(updateid,function(result){
+		    res.render('updateprofile', {
+				employee: result 
+			});
+		})
+	}else{
+			res.redirect('admin/admin');
+	}
+});
+
+router.post('/update/(:id)',[
+	// username can not be empty
+	body('username').notEmpty().isLength({ min: 8 }),
+	// password should be at least 8 chars long
+	
+	body('employeephone').notEmpty().isDecimal().isLength({ min: 11 }).isLength({ max: 11 }),  
+	body('employeegender').notEmpty(),  
+	body('employeedesignation').notEmpty() 
+  ], function(req, res){
+	const errors = validationResult(req);
+	if (!errors.isEmpty()) {
+	  return res.status(400).json({ errors: errors.array() });
+	}
+    var user = {
+		name:req.params.id,
+		username: req.body.username,
+		employeephone: req.body.employeephone,
+		employeegender: req.body.employeegender,
+		employeedesignation: req.body.employeedesignation,
+    };
+        employeelist.update(user, function(status){
+
+            if(status){
+                res.render('admin');
+            }else{
+                res.send('not working');
+            }
+        });
 });
 
 module.exports = router;
